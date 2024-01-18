@@ -1,0 +1,159 @@
+<!-- dashboard.hbs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Your existing CSS styles */
+
+        .dashboard-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+        .user-form {
+            width: 45%;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+
+        .user-table {
+            width: 45%;
+        }
+        /* Add these styles to your existing CSS */
+
+.user-form {
+    width: 45%;
+    background-color: #ffffff; 
+     border: 1px solid #FF69B4;/* Light pink */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.2); /* Lighter pink shadow */
+}
+
+.user-form h2 {
+    color: #FF1493; /* Deep pink */
+}
+
+.user-form label {
+    color: #FF69B4; /* Hot pink */
+}
+
+.user-form input {
+   /* Light pink */ --
+    border: 1px solid #FF69B4; /* Hot pink border */
+    padding: 10px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.user-form button {
+    background-color: #FF69B4; /* Hot pink */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.user-form button:hover {
+    background-color: #DB7093; /* Pale violet red hover effect */
+}
+
+        .retrieve-form {
+            width: 45%;
+            background-color: #ffffff;
+              border: 1px solid #FF69B4; /* Light pink */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(255, 182, 193, 0.2); /* Lighter pink shadow */
+            margin-top: 20px;
+        }
+
+        .retrieve-form h2 {
+            color: #FF1493; /* Deep pink */
+        }
+
+        .retrieve-form label {
+            color: #FF69B4; /* Hot pink */
+        }
+
+        .retrieve-form input {
+           /* Hot pink border */
+             border: 1px solid #FF69B4;
+            padding: 10px;
+            margin: 8px 0;
+            width: 100%;
+        }
+
+        .retrieve-form button {
+            background-color: #FF69B4; /* Hot pink */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .retrieve-form button:hover {
+            background-color: #DB7093; /* Pale violet red hover effect */
+        }
+
+
+        /* Additional styling for dashboard components can be added here */
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align:center;margin-top:140px">Welcome to the Dashboard, Admin!</h1>
+    </div>
+
+    <div class="dashboard-container">
+        <form class="user-form" action="/create-user" method="post">
+            <h2>Create User</h2>
+            <label for="userid">User ID:</label>
+            <input type="text" id="userid" name="uuserid" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="upassword" required>
+
+            {{!-- <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="photo">Photo URL:</label>
+            <input type="text" id="photo" name="photo"> --}}
+
+            <button type="submit">Create User</button>
+        </form>
+
+      <form class="retrieve-form" action="/retrieve-users" method="get">
+    <h2>Retrieve Users</h2>
+    <label for="userid1">User ID 1:</label>
+    <input type="text" id="userid1" name="userid1" >
+
+    <label for="userid2">User ID 2:</label>
+    <input type="text" id="userid2" name="userid2" >
+
+    <button type="submit">Retrieve Users</button>
+</form>
+</div>
+
+    {{!-- <a href="/">Logout</a> --}}
+</body>
+</html>

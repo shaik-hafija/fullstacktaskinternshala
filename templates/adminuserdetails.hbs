@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="path/to/your/styles.css"> 
+    <style>
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 50px;
+            max-height: 50px;
+        }
+
+        .action-buttons button {
+            margin-right: 5px;
+        }
+
+        .action-buttons button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <td>{{this.uuserid}}</td>
+                    <td>{{this.uname}}</td>
+                    <td><img src="{{this.uphoto}}" alt="{{this.uname}}'s Image"></td>
+                    <td class="action-buttons">
+    <form action="/markAsDone" method="post" onsubmit="return markAsDone('{{this.uuserid}}')">
+        <button type="submit" >Done</button>
+    </form>
+
+    <form action="/deleteUser" method="post" onsubmit="return deleteUser('{{this.uuserid}}')">
+        <button type="submit">Delete</button>
+    </form>
+</td>
+
+<script src="path/to/your/scripts.js"></script> 
+<script>
+    function markAsDone(userId) {
+     
+
+        return true; 
+    }
+
+    function deleteUser(userId) {
+        
+
+        return true; 
+    }
+</script>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <script >
+    function markAsDone(userId) {
+    const uuserid = document.querySelector('input[name="uuserid"]').value;
+
+
+
+    return true; 
+}
+</script> 
+</body>
+
+</html>
